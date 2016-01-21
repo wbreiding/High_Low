@@ -1,5 +1,12 @@
 <?php
-$number = mt_rand(1,100);
+if ($argc == 3) {
+  $min = $argv[1];
+  $max = $argv[2];
+} else {
+  $min = 1;
+  $max = 100;
+}
+$number = mt_rand($min,$max);
 $guess = 0;
 $numGuesses = 0;
 while ($guess != $number) {
